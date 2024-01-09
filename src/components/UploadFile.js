@@ -43,6 +43,9 @@ function UploadFile({ handleImageUpload }) {
 
     for (let file of files) formData.append('images', file);
 
+    const title = document.getElementById('title').value;
+    formData.append('title', title);
+
     try {
       const res = await postFile(formData);
       console.log(res);
@@ -70,7 +73,7 @@ function UploadFile({ handleImageUpload }) {
           {fileName}
           <input type="file" name="image" id="inp" multiple onChange={imageSelectHandler} accept="image/*" />
         </div>
-
+        <input type="text" name="title" id="title" />
         <button type="submit">파일전송</button>
       </form>
     </>

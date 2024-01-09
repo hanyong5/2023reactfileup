@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 function ImageList({ imgData }) {
   return (
     <>
@@ -8,7 +6,7 @@ function ImageList({ imgData }) {
           imgData.map((item, i) => {
             return (
               <div key="i">
-                <img src={`http://localhost:8081/file/${item.id}`} alt="" style={{ width: 200 }} />
+                <img src={`${process.env.REACT_APP_DEV_HOST}file/${item.id}`} alt="" style={{ width: 200 }} />
               </div>
             );
           })
